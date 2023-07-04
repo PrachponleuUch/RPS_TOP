@@ -60,12 +60,12 @@ let gameCount = 0;
 // Get all button tags from HTML page
 let btns = document.querySelectorAll("button")
 
-// Check for click event for each one and pass its value to the game function
-btns.forEach((btn) => {
+// Check for click event for each one of the buttons and if so pass its value to the game function
+for(let btn of btns) {
   btn.addEventListener('click', () => {
     game(btn.value);
   });
-});
+};
 
 
 
