@@ -1,10 +1,11 @@
 "use strict"
-
+// Generate a random computer choice
 function getComputerChoice(){
   const computerChoice = ["rock", "paper", "scissors"];
   return computerChoice[Math.floor(Math.random() * (computerChoice.length))];
 }
 
+// Rock paper scissors logic
 function playRound(playerSelection, computerSelection){
   switch (playerSelection.toLowerCase()){
     case ("rock"):
@@ -24,6 +25,7 @@ function playRound(playerSelection, computerSelection){
   }
 }
 
+// Control the flow of the game and output it to HTML page
 function game(val){
   let playerSelection = val;
   let computerSelection = getComputerChoice();
@@ -55,7 +57,10 @@ let computer = 0;
 let finalResult;
 let gameCount = 0;
 
+// Get all button tags from HTML page
 let btns = document.querySelectorAll("button")
+
+// Check for click event for each one and pass its value to the game function
 btns.forEach((btn) => {
   btn.addEventListener('click', () => {
     game(btn.value);
